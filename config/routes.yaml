@@ -7,3 +7,6 @@ user:
 feed:
     path: /feed
     controller: App\Controller\FeedController::index
+search:
+    path: /search
+    controller: App\Controller\SearchController::index
