@@ -10,3 +10,6 @@ feed:
 search:
     path: /search
     controller: App\Controller\SearchController::index
+app_logout:
+    path: /logout
+    methods: GET

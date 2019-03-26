@@ -25,26 +25,6 @@ public function index()
 }
 
     /**
-     * @Route("/user/login", name="login")
-     */
-public function login()
-{
-    return $this->render("index.html.twig", [
-    'title'=>'Login site',
-]);
-}
-
-    /**
-     * @Route("/user/register", name="register")
-     */
-public function register()
-{
-    return $this->render("index.html.twig",[
-        'title'=>"Register site",
-    ]);
-}
-
-    /**
      * @Route("/user/change-password", name="changePassowrd")
      */
 public function changepass()
@@ -60,6 +40,17 @@ public function changepass()
     {
         return $this->render("index.html.twig",[
             'title'=>'Logout',
+        ]);
+    }
+
+
+    /**
+     * @Route("/user/profile", name="profile")
+     */
+    public function profile()
+    {
+        return $this->render("index.html.twig",[
+            'title'=>'Profile',
         ]);
     }
 

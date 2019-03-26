@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+</head>
+<body>
+{% include 'partials/menu/navbar.html.twig' %}
+<h1>{{ title }}</h1>
+<div class="col-6">
+{% block body %}
+
+    {{ form_start(registrationForm) }}
+    {{ form_row(registrationForm.email) }}
+    {{ form_row(registrationForm.plainPassword) }}
+
+    <button class="btn btn-lg btn-primary">Register</button>
+    {{ form_end(registrationForm) }}
+</div>
+{% endblock %}
+
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>

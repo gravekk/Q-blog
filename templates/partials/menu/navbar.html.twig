@@ -12,7 +12,7 @@
                         <a class="nav-link" href="{{ path('index') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('new') }}">Nowy feed</a>
+                        <a class="nav-link" href="{{ path('new feed') }}">Nowy feed</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('popular feed') }}">Popularne</a>
@@ -21,7 +21,7 @@
                         <a class="nav-link" href="{{ path('user') }}">Twój profil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('logout') }}">Wyloguj</a>
+                        <a class="nav-link" href="{{ path('app_logout') }}">Wyloguj</a>
                     </li>
                 </ul>
             {% else %}
@@ -30,7 +30,7 @@
                         <a class="nav-link" href="{{ path('index') }}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('login') }}">Zaloguj</a>
+                        <a class="nav-link" href="{{ path('app_login') }}">Zaloguj</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('popular feed') }}">Popularne</a>
@@ -38,10 +38,10 @@
                 </ul>
             {% endif %}
 
-            <form class="form-inline my-2 my-lg-0" action="{{ path('search') }}" method="post">
-                <input class="form-control mr-sm-2" type="search" placeholder="Szukaj" name="ask" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Szukaj</button>
-            </form>
+            {#<form class="form-inline my-2 my-lg-0" action="{{ path('search') }}" method="post">#}
+                {#<input class="form-control mr-sm-2" type="search" placeholder="Szukaj" name="ask" aria-label="Search">#}
+                {#<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Szukaj</button>#}
+            {#</form>#}
         </div>
     </div>
 </nav>

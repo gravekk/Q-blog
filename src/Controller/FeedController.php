@@ -39,7 +39,7 @@ class FeedController extends AbstractController
     public function new()
     {
         return $this->render("index.html.twig",[
-            "title"=>"Popular feed",
+            "title"=>"New feed",
         ]);
     }
 }
