@@ -9,8 +9,14 @@
 namespace App\Controller;
 
 
+use App\Entity\Feed;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
+
 
 class FeedController extends AbstractController
 {
@@ -36,9 +42,19 @@ class FeedController extends AbstractController
     /**
      * @Route("/feed/new", name="new feed")
      */
-    public function new()
+    public function new(Request $request)
     {
-        return $this->render("index.html.twig",[
+
+        $feed = new Feed();
+        $form = $this->createFormBuilder($feed)
+            ->add('name',TextType::class)
+            ->add('text', TextType::class)
+            ->add('photo', FileType::class)
+            ->getForm();
+        $form->handleRequest($request);
+
+        return $this->render("feed/feed.html.twig",[
+            "FeedForm"=> $form->createView(),
             "title"=>"New feed",
         ]);
     }

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+</head>
+<body>
+{% include 'partials/menu/navbar.html.twig' %}
+<h1>{{ title }}</h1>
+<div class="col-6">
+{% block body %}
+
+    {{ form_start(FeedForm) }}
+    {{ form_row(FeedForm.name) }}
+    {{ form_row(FeedForm.text) }}
+    {{ form_row(FeedForm.photo) }}
+
+
+    <button class="btn btn-lg btn-primary">Add feed</button>
+    {{ form_end(FeedForm) }}
+</div>
+{% endblock %}
+
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>
