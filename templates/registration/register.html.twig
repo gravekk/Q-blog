@@ -15,8 +15,11 @@
 {% block body %}
 
     {{ form_start(registrationForm) }}
+    {{ form_row(registrationForm.first_name) }}
+    {{ form_row(registrationForm.last_name) }}
     {{ form_row(registrationForm.email) }}
-    {{ form_row(registrationForm.plainPassword) }}
+    {{ form_row(registrationForm.plainPassword.first) }}
+    {{ form_row(registrationForm.plainPassword.second) }}
 
     <button class="btn btn-lg btn-primary">Register</button>
     {{ form_end(registrationForm) }}
