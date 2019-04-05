@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb9a912df5d2efd6e009b93fd642b26e",
+    "content-hash": "eb894b6e2dc09c2fe583da362a761d3d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2799,7 +2799,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.2.4",
+            "version": "v4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",

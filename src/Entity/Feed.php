@@ -46,6 +46,18 @@ class Feed
      */
     private $commentid;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $author_id;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $authorName;
+
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -122,4 +134,31 @@ class Feed
 
         return $this;
     }
+
+    public function getAuthorId(): ?int
+    {
+        return $this->author_id;
+    }
+
+    public function setAuthorId(int $author_id): self
+    {
+        $this->author_id = $author_id;
+
+        return $this;
+    }
+
+    public function getAuthorName(): ?string
+    {
+        return $this->authorName;
+    }
+
+    public function setAuthorName(string $authorName): self
+    {
+        $this->authorName = $authorName;
+
+        return $this;
+    }
+
+
+
 }

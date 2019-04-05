@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+</head>
+<body>
+{% include 'partials/menu/navbar.html.twig' %}
+<h1>{{ title }}</h1>
+<div class="card-columns">
+{% for feed in feeds %}
+    <a href="{{ path('red onefeed') }}{{ feed.id|e }}">
+        <div class="card">
+        <img class="card-img-top" src="{{ path('index') }}uploads/img/{{ feed.photo|e }}" alt="{{ feed.name|e }}">
+        <div class="card-body">
+            <h5 class="card-title">{{ feed.name|e }}</h5>
+            <p class="card-text">{{ feed.text|e }}</p>
+            <p class="card-text"><small class="text-muted">{{ feed.authorName|e }}</small></p>
+        </div>
+    </div>
+    </a>
+
+{% endfor %}
+</div>
+{% block body %}
+
+{% endblock %}
+
+
+{% block javascripts %}{% endblock %}
+</body>
+</html>
