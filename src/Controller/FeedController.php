@@ -11,7 +11,7 @@ namespace App\Controller;
 
 use App\Entity\Feed;
 use App\Entity\User;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -51,10 +51,10 @@ class FeedController extends AbstractController
     /**
      * @Route("/feed/popular", name="popular feed")
      */
-    public function popular()
+    public function Popular()
     {
 
-        for ($i = 1; $i < 4; $i++) {
+        for ($i = 5; $i < 7; $i++) {
 
         $feed[$i] = $this->getDoctrine()
             ->getRepository(Feed::class)
@@ -80,7 +80,7 @@ class FeedController extends AbstractController
     /**
      * @Route("/feed/new", name="new feed")
      */
-    public function new(Request $request)
+    public function New(Request $request)
     {
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 

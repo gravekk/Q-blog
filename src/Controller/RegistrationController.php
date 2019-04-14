@@ -33,6 +33,7 @@ class RegistrationController extends AbstractController
             );
             $data = new \DateTime('@'.strtotime('now'));
             $user->setAddDate($data);
+            $user->setFriend(1);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
